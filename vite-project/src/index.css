@@ -232,4 +232,105 @@ h1 {
       animation: drop-to-middle-desktop 4s ease-out forwards;
     }
   }
+
+  /* Smoke rising animation */
+  @keyframes smoke-rise-mobile {
+    0% {
+      transform: translate(-50%, 0) scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--drift-x, 0px)), -180px) scale(1.3)
+        rotate(var(--rotate, 15deg));
+      opacity: 0;
+    }
+  }
+
+  @keyframes smoke-rise-tablet {
+    0% {
+      transform: translate(-50%, 0) scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--drift-x, 0px)), -220px) scale(1.4)
+        rotate(var(--rotate, 15deg));
+      opacity: 0;
+    }
+  }
+
+  @keyframes smoke-rise-desktop {
+    0% {
+      transform: translate(-50%, 0) scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(calc(-50% + var(--drift-x, 0px)), -280px) scale(1.5)
+        rotate(var(--rotate, 15deg));
+      opacity: 0;
+    }
+  }
+
+  .smoke-particle {
+    position: absolute;
+    left: 50%;
+    pointer-events: none;
+    z-index: 55;
+    filter: blur(1px);
+
+    /* Mobile default */
+    width: 40px;
+    height: auto;
+    animation: smoke-rise-mobile 3.5s ease-out forwards;
+  }
+
+  /* Tablet smoke */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .smoke-particle {
+      width: 50px;
+      animation: smoke-rise-tablet 4s ease-out forwards;
+    }
+  }
+
+  /* Desktop smoke */
+  @media (min-width: 1024px) {
+    .smoke-particle {
+      width: 60px;
+      animation: smoke-rise-desktop 4.5s ease-out forwards;
+    }
+  }
+
+  /* Bow animation for prayer hand */
+  @keyframes bow {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-bow {
+    animation: bow 0.6s ease-in-out;
+  }
 }
