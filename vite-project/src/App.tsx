@@ -1,4 +1,4 @@
-import Pass from './assets/pass.png';
+import Pass from './assets/bantho.png';
 import Nhang from './assets/nhang.png';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
