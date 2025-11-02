@@ -165,13 +165,38 @@ h1 {
 
 /* Incense drop animation */
 @layer utilities {
-  @keyframes drop-to-middle {
+  /* Desktop keyframes */
+  @keyframes drop-to-middle-desktop {
     0% {
       top: -320px;
       opacity: 0.9;
     }
     100% {
-      top: calc(50vh - 160px);
+      top: calc(50vh - 230px);
+      opacity: 1;
+    }
+  }
+
+  /* Tablet keyframes */
+  @keyframes drop-to-middle-tablet {
+    0% {
+      top: -250px;
+      opacity: 0.9;
+    }
+    100% {
+      top: calc(50vh - 240px);
+      opacity: 1;
+    }
+  }
+
+  /* Mobile keyframes */
+  @keyframes drop-to-middle-mobile {
+    0% {
+      top: -200px;
+      opacity: 0.9;
+    }
+    100% {
+      top: calc(50vh - 130px);
       opacity: 1;
     }
   }
@@ -180,11 +205,31 @@ h1 {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    height: 320px;
-    width: auto;
-    top: -320px;
-    animation: drop-to-middle 4s ease-out forwards;
     z-index: 50;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+
+    /* Mobile styles (default) */
+    height: 200px;
+    width: auto;
+    top: -200px;
+    animation: drop-to-middle-mobile 4s ease-out forwards;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .incense-animate {
+      height: 250px;
+      top: -250px;
+      animation: drop-to-middle-tablet 4s ease-out forwards;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .incense-animate {
+      height: 320px;
+      top: -320px;
+      animation: drop-to-middle-desktop 4s ease-out forwards;
+    }
   }
 }
