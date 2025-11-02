@@ -107,7 +107,7 @@ function App() {
   }, [animKey]);
 
   return (
-    <main className="relative h-screen w-screen overflow-hidden">
+    <main className="relative h-screen w-screen">
       {/* Background gradient to blend with video (black becomes transparent with screen blend) */}
 
       <div className="absolute overflow-hidden w-screen h-screen bg-white">
@@ -251,6 +251,13 @@ function App() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div className="absolute bottom-0 z-10 w-full py-3 text-center">
+        <p className="text-amber-700 text-sm font-medium">
+          From XunFu with love ❤️
+        </p>
       </div>
     </main>
   );
